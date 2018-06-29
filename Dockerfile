@@ -44,8 +44,10 @@ RUN mkdir -p /usr/local/lib/R/etc \
   && echo "R_LIBS_USER='/usr/local/lib/R/site-library'" >> /usr/local/lib/R/etc/Renviron \
   && echo "R_LIBS=\${R_LIBS-'/usr/local/lib/R/site-library:/usr/local/lib/R/library:/usr/lib/R/library'}" >> /usr/local/lib/R/etc/Renviron \
   ## Install bunch of packages
-  && Rscript -e "options(warn=2); install.packages(c('data.table', 'tidyverse', 'caret', 'devtools', 'caTools', 'bitops'X))" \
-  && Rscript -e "options(warn=2); install.packages(c('rsample', 'pdp', 'lime', 'drat', 'gbm', 'prettydoc', 'vtreat'))" \
+  && Rscript -e "options(warn=2); install.packages(c('devtools', 'caTools', 'bitops', 'prettydoc'))" \
+  && Rscript -e "options(warn=2); install.packages(c('data.table', 'tidyverse', 'caret'))" \
+  && Rscript -e "options(warn=2); install.packages(c('rsample', 'pdp', 'lime', 'drat', 'gbm', 'vtreat'))" \
+  && Rscript -e "options(warn=2); install.packages(c('randomForest', 'ranger'))" \
   && Rscript -e "options(warn=2); drat:::addRepo('dmlc'); install.packages('xgboost', repos='http://dmlc.ml/drat/', type = 'source')"
 
 # Rstudio
