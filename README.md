@@ -1,6 +1,10 @@
-Based on https://github.com/rocker-org/rocker.
+Docker image:
 
-Code shared under GPL-2.0.
+- Based on https://github.com/rocker-org/rocker
+- Code shared under GPL-2.0
+- Ubuntu 18.04 as the base image
+- Has R and RStudio installed, with selected packages installed as well
+- Jupyter, pandas, sklearn, are also installed
 
 https://hub.docker.com/r/sainathadapa/ds-docker/
 
